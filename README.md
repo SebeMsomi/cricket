@@ -8,8 +8,8 @@ The league is controlled and set up with the predefined cricketing rules.
 
 Basically the teams are devided into two groups and initially group matches are held. the top two teams of each group qualify for the Semis.
 
-###The team includes: 
+##The team includes: 
   1.players<br/>
   2.Coaching
-  ![](pic.png)
-  <img src = "pic.png"/>
+  
+![](pic.png)
