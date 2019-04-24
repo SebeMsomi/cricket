@@ -13,7 +13,11 @@ public class BowlerFactoryTest {
 
     public void getCricket(){
         String type = "Delivery, There are many different types of " +
-                "delivery that a bowler can bowl";
+                "delivery that a bowler can bowl These deliveries vary by:" +
+                " technique, the hand the bowler bowls with, use of the fingers," +
+                " use of the seam, how the ball is positioned in the hand," +
+                " where the ball is pitched on the wicket, the speed of the ball," +
+                " and the tactical intent of the bowler";
 
 
 
