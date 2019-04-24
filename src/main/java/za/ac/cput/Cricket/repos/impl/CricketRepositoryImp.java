@@ -1,6 +1,7 @@
-package za.ac.cput.Cricket.repos;
+package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Cricket;
+import za.ac.cput.Cricket.repos.CricketRepos;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,8 +15,8 @@ public class CricketRepositoryImp implements CricketRepos {
         this.crickets = new HashSet<>();
     }
 
-    private Cricket findCricket(String cricketId) {
-        return this.crickets.stream().filter(cricket -> cricket.getTeam1().equals(cricketId)).findAny().orElse(null);
+    private Cricket findCricket(String team1) {
+        return this.crickets.stream().filter(cricket -> cricket.getTeam1().equals(team1)).findAny().orElse(null);
 
     }
 
@@ -26,6 +27,7 @@ public class CricketRepositoryImp implements CricketRepos {
 
     @Override
     public Cricket create(Cricket cricket) {
+
         this.crickets.add(cricket);
         return cricket;
     }
@@ -37,6 +39,7 @@ public class CricketRepositoryImp implements CricketRepos {
 
     @Override
     public Cricket read(final String cricketId) {
+
         return findCricket(cricketId);
     }
 
