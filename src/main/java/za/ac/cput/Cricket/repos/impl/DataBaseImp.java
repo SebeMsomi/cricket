@@ -4,8 +4,8 @@ import za.ac.cput.Cricket.domain.Cricket;
 import za.ac.cput.Cricket.repos.CricketRepos;
 import java.util.Set;
 
-public class DataBaseImp implements CricketRepos {
-    @Override
+public class DataBaseImp /*implements CricketRepos*/ {
+  /*  @Override
     public Set<Cricket> getAll()
     {
         return null;
@@ -28,10 +28,10 @@ public class DataBaseImp implements CricketRepos {
 
     }
 
-    @Override
+
     public Cricket read(Cricket cricket)
     {
         return null;
-    }
+    }*/
 
 }

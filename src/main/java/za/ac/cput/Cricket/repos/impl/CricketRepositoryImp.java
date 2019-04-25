@@ -6,9 +6,9 @@ import za.ac.cput.Cricket.repos.CricketRepos;
 import java.util.HashSet;
 import java.util.Set;
 
-public class CricketRepositoryImp implements CricketRepos {
+public class CricketRepositoryImp /*implements CricketRepos*/ {
 
-    private static CricketRepos repository = null;
+    /*private static CricketRepos repository = null;
     private Set<Cricket> crickets;
 
     private CricketRepositoryImp() {
@@ -32,15 +32,15 @@ public class CricketRepositoryImp implements CricketRepos {
         return cricket;
     }
 
-    @Override
+
     public void delete(Cricket cricket) {
         this.crickets.remove(cricket);
     }
 
-    @Override
+
     public Cricket read(final String cricketId) {
 
-        return findCricket(cricketId);
+        return  findCricket(cricketId);
     }
 
     @Override
@@ -52,6 +52,6 @@ public class CricketRepositoryImp implements CricketRepos {
 
     public Set<Cricket> getAll() {
         return this.crickets;
-    }
+    }*/
 }
 

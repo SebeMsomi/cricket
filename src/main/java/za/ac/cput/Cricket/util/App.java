@@ -1,4 +1,4 @@
-package za.ac.cput.Cricket;
+package za.ac.cput.Cricket.util;
 
 /**
  * Hello world!
