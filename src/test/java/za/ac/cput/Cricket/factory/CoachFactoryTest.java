@@ -10,9 +10,11 @@ public class CoachFactoryTest {
 
     @Test
     public void getCoach() {
-        String name = "se";
-        Coach c = CoachFactory.getCoach(name);
+        String name = "Ottis Gibson";
+        String experience = "20 years";
+        int age = 50;
+        Coach c = CoachFactory.getCoach(name,age,experience);
         System.out.println(c);
-        Assert.assertNotNull(c.getAge());
+        Assert.assertNotEquals(c.getName(),c.getAge(),c.getExperience());
     }
 }
