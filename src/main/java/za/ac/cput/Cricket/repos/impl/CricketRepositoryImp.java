@@ -15,10 +15,7 @@ public class CricketRepositoryImp implements CricketRepos {
         this.crickets = new HashSet<>();
     }
 
-    private Cricket findCricket(String team1) {
-        return this.crickets.stream().filter(cricket -> cricket.getTeam1().equals(team1)).findAny().orElse(null);
 
-    }
 
     public static CricketRepos getRepository(){
         if (repository == null) repository = new CricketRepositoryImp();
@@ -37,17 +34,25 @@ public class CricketRepositoryImp implements CricketRepos {
         this.crickets.remove(cricket);
     }
 
+    private Cricket findCricket(String team1) {
+        return this.crickets.stream().filter(cricket -> cricket.getTeam1().equals(team1)).findAny().orElse(null);
 
+    }
     public Cricket read(final String cricketId) {
 
         return  findCricket(cricketId);
     }
 
-    @Override
+
     public Cricket update(Cricket cricket) {
         // find the student to update in the student collection
         // if found, update and save back into the student collection
         return null;
+    }
+
+    @Override
+    public void delete(String s) {
+
     }
 
     public Set<Cricket> getAll() {
