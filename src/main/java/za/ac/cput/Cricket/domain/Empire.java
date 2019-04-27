@@ -28,4 +28,11 @@ public class Empire {
             return new Empire(this);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Empire{" +
+                "type='" + type + '\'' +
+                '}';
+    }
 }

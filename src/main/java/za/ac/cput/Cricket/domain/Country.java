@@ -47,4 +47,12 @@ public class Country {
             return new Country(this);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "countryID=" + countryID +
+                ", counrtyName='" + counrtyName + '\'' +
+                '}';
+    }
 }
