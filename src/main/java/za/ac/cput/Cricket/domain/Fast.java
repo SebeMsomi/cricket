@@ -26,4 +26,10 @@ public class Fast {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Fast{" +
+                "mph=" + mph +
+                '}';
+    }
 }
