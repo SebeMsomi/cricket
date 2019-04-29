@@ -6,7 +6,7 @@ import za.ac.cput.Cricket.repos.BatsmanInterface;
 import java.util.HashSet;
 import java.util.Set;
 
-public class BatsmanRepoImp {
+public class BatsmanRepoImp implements BatsmanInterface{
     private static BatsmanInterface repository = null;
     private Set<Batsman> batsmans;
 
@@ -15,7 +15,7 @@ public class BatsmanRepoImp {
     }
 
     public static BatsmanInterface getRepository(){
-        if (repository == null) repository = new BatsmanRepoImp();
+        if (repository == null) repository = (BatsmanInterface) new BatsmanRepoImp();
         return repository;
     }
 
@@ -31,13 +31,18 @@ public class BatsmanRepoImp {
         this.batsmans.remove(batsman);
     }
 
-    private Batsman findCricket(String team1) {
-        return this.batsmans.stream().filter(batsman -> batsman.getRatings().(team1)).findAny().orElse(null);
+    private Batsman findBatsman(int rating) {
+        return this.batsmans.stream().filter(batsman -> batsman.getRatings()
+
+                .trim().equals(rating.trim())
+                .findAny().orElse(null);
+
 
     }
-    public Batsman read(final String batsman) {
+    public Batsman read(final int batsman) {
+        Batsman batsman1 = findBatsman(batsman);
 
-        return  findCricket(batsman);
+        return  batsman1 == null ? null : batsman1;
     }
 
 
@@ -47,9 +52,15 @@ public class BatsmanRepoImp {
         return null;
     }
 
-    @Override
+
     public void delete(String s) {
 
+    }
+
+    @Override
+    public Batsman read(int s) {
+        Batsman batsman1 = findBatsman(s);
+        return batsman1 == null ? null : batsman1;
     }
 
     public Set<Batsman> getAll() {
