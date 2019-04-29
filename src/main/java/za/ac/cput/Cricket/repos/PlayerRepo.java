@@ -1,4 +1,12 @@
 package za.ac.cput.Cricket.repos;
 
-public interface PlayerRepo {
+
+
+import za.ac.cput.Cricket.domain.Player;
+
+import java.util.Set;
+
+public interface PlayerRepo extends Repo<Player, String> {
+    Set<Player> getAll();
+
 }

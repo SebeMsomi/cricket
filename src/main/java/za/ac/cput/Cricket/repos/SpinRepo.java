@@ -1,4 +1,11 @@
 package za.ac.cput.Cricket.repos;
 
-public interface SpinRepo {
+
+
+import za.ac.cput.Cricket.domain.Spin;
+
+import java.util.Set;
+
+public interface SpinRepo  extends Repo<Spin, String> {
+    Set<Spin> getAll();
 }
