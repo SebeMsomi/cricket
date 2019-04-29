@@ -1,4 +1,9 @@
 package za.ac.cput.Cricket.repos;
 
-public interface CountryRepo {
+import za.ac.cput.Cricket.domain.Country;
+
+import java.util.Set;
+
+public interface CountryRepo  extends Repo<Country, String> {
+    Set<Country> getAll();
 }

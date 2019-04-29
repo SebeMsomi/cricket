@@ -1,4 +1,9 @@
 package za.ac.cput.Cricket.repos;
 
-public interface EmpireRepo {
+import za.ac.cput.Cricket.domain.Empire;
+
+import java.util.Set;
+
+public interface EmpireRepo extends Repo<Empire, String> {
+    Set<Empire> getAll();
 }
