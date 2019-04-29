@@ -22,13 +22,13 @@ public class CricketServiceImp implements CricketSer {
 
 
     //@Override
-    public Cricket create(Cricket course) {
-        return this.repository.create(course);
+    public Cricket create(Cricket cricket) {
+        return this.repository.create(cricket);
     }
 
     //@Override
-    public Cricket update(Cricket course) {
-        return this.repository.update(course);
+    public Cricket update(Cricket cricket) {
+        return this.repository.update(cricket);
     }
 
     //@Override
