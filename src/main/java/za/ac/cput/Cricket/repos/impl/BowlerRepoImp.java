@@ -18,38 +18,42 @@ public class BowlerRepoImp {
         return repository;
     }
 
+    private Bowler findBowler(String bowl) {
+        return this.bowlers.stream().filter(bowler -> bowler.getType().equals(bowl)).findAny().orElse(null);
+    }
 
     public Bowler create(Bowler bowler){
         this.bowlers.add(bowler);
         return bowler;
     }
 
-    public Bowler read(String bowlerId){
-        // find the course that matches the id and return it if exist
-        return null;
-    }
+    public Bowler read(String bowl){
+        Bowler bowler = findBowler(bowl);
+        if(bowler != null) {
 
-    public void delete(String bowlerId) {
-        // find the course, delete it if it exist
-
-        if (bowlers.contains(bowlerId))
-        {
-            bowlers.remove(bowlers);
+            return findBowler(bowl);
+        }
+        else{
+            return null;
         }
     }
 
-    public Bowler update(String id, Bowler bowler){
-        // find the course, update it and delete it if it exists
-        /*for(int i = 0; i<bowlers.size();i++)
-        {
-            Bowler b = bowlers.get(i);
-            if (b.getType().equals(id))
-            {
-                bowlers.set(i, bowler);
-            }
-        }*/
+    public void delete(String bowlerId) {
 
-        return bowler;
+        if (bowlers.contains(bowlerId))
+        {
+            bowlers.remove(bowlerId);
+        }
+    }
+
+    public Bowler update(String bowl, Bowler bowler){
+        Bowler bowler1 = findBowler(bowl);
+        if(bowlers.contains(bowler))
+        {
+            bowlers.remove(bowler);
+            bowlers.add(bowler);
+        }
+        return bowler1;
     }
 
 
