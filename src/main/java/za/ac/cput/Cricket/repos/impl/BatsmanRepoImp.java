@@ -19,8 +19,26 @@ public class BatsmanRepoImp {
         return repository;
     }
 
+    private Batsman findCricket(String id) {
+        return this.batsmans.stream().filter(batsman -> batsman.equals(id)).findAny().orElse(null);
+
+    }
+
+    public Batsman read(final String id) {
+        Batsman batsman = findCricket(id);
+
+        if(batsman != null) {
+
+            return findCricket(id);
+        }
+        else{
+            return null;
+        }
+    }
+
     //@Override
     public Batsman create(Batsman batsman) {
+
 
         this.batsmans.add(batsman);
         return batsman;
@@ -31,19 +49,6 @@ public class BatsmanRepoImp {
         this.batsmans.remove(batsman);
     }
 
-    /*private Batsman findBatsman(int rating) {
-        return this.batsmans.stream().filter(batsman -> batsman.getRatings()
-
-                .trim().equals(rating.trim())
-                .findAny().orElse(null);
-
-
-    }*/
-  /* public Batsman read(final int batsman) {
-        Batsman batsman1 = findBatsman(batsman);
-
-        return  batsman1 == null ? null : batsman1;
-    }*/
 
 
     public Batsman update(Batsman batsman) {
@@ -53,15 +58,7 @@ public class BatsmanRepoImp {
     }
 
 
-    public void delete(String s) {
 
-    }
-
-
-   /* public Batsman read(int s) {
-        Batsman batsman1 = findBatsman(s);
-        return batsman1 == null ? null : batsman1;
-    }*/
 
     public Set<Batsman> getAll() {
         return this.batsmans;

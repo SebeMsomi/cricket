@@ -31,10 +31,24 @@ public class BowlerRepoImp {
 
     public void delete(String bowlerId) {
         // find the course, delete it if it exist
+
+        if (bowlers.contains(bowlerId))
+        {
+            bowlers.remove(bowlers);
+        }
     }
 
-    public Bowler update(Bowler bowler){
+    public Bowler update(String id, Bowler bowler){
         // find the course, update it and delete it if it exists
+        /*for(int i = 0; i<bowlers.size();i++)
+        {
+            Bowler b = bowlers.get(i);
+            if (b.getType().equals(id))
+            {
+                bowlers.set(i, bowler);
+            }
+        }*/
+
         return bowler;
     }
 

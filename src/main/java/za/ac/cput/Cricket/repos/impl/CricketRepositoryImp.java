@@ -30,28 +30,41 @@ public class CricketRepositoryImp implements CricketRepos {
     }
 
 
-    public void delete(Cricket cricket) {
+    /*public void delete(Cricket cricket) {
         this.crickets.remove(cricket);
-    }
+    }*/
 
     private Cricket findCricket(String team1) {
         return this.crickets.stream().filter(cricket -> cricket.getTeam1().equals(team1)).findAny().orElse(null);
 
     }
     public Cricket read(final String cricketId) {
+        Cricket cricket = findCricket(cricketId);
 
-        return  findCricket(cricketId);
+        if(cricket != null) {
+
+            return findCricket(cricketId);
+        }
+        else{
+            return null;
+        }
     }
 
 
     public Cricket update(Cricket cricket) {
-        // find the student to update in the student collection
-        // if found, update and save back into the student collection
-        return null;
+    Cricket cricket1 = findCricket(cricket.getCricketId());
+        if(crickets.contains(cricket1))
+        {
+            crickets.remove(cricket1);
+            crickets.add(cricket);
+        }
+        return cricket1;
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(String id) {
+        Cricket cricket = findCricket(id);
+        crickets.remove(cricket);
 
     }
 
