@@ -4,7 +4,7 @@ import java.security.KeyStore;
 import java.util.Set;
 
 public class Country {
-    private int countryID;
+    private String countryID;
     private String counrtyName;
 
     public Country(){}
@@ -16,7 +16,7 @@ public class Country {
 
     }
 
-    public int getCountryID() {
+    public String getCountryID() {
         return countryID;
     }
 
@@ -27,10 +27,10 @@ public class Country {
     public static class Builder
     {
         private String countryName;
-        private int countryID;
+        private String countryID;
         private Set<Team> teams;
 
-        public Builder countryID(int countryID)
+        public Builder countryID(String countryID)
         {
             this.countryID = countryID;
             return this;

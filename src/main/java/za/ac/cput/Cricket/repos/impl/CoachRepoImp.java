@@ -1,45 +1,51 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Coach;
+import za.ac.cput.Cricket.repos.interfaces.CoachRepo;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class CoachRepoImp {
+public class CoachRepoImp implements CoachRepo{
     private static CoachRepoImp repository = null;
-    private Set<Coach> coachSet;
+    private Map<String, Coach> coaches;
 
-    private CoachRepoImp(){
-        this.coachSet = new HashSet<>();
+    private CoachRepoImp() {
+        this.coaches = new HashMap<>();
     }
 
-    public static CoachRepoImp getRepository(){
-        if (repository == null) repository = new CoachRepoImp();
+    public static CoachRepo getRepository(){
+        if(repository == null) repository = new CoachRepoImp();
         return repository;
     }
 
-
-    public Coach create(Coach coach){
-        this.coachSet.add(coach);
+    @Override
+    public Coach create(Coach coach) {
+        this.coaches.put(coach.getCoachId(),coach);
         return coach;
     }
 
-    public Coach read(String coachID){
-        // find the course that matches the id and return it if exist
-        return null;
+    @Override
+    public Coach update(Coach coach) {
+        this.coaches.replace(coach.getCoachId(),coach);
+        return this.coaches.get(coach.getCoachId());
     }
 
-    public void delete(String coachID) {
-        // find the course, delete it if it exist
+    @Override
+    public void delete(String s) {
+        this.coaches.remove(s);
     }
 
-    public Coach update(Coach coach){
-        // find the course, update it and delete it if it exists
-        return coach;
+    @Override
+    public Coach read(String s) {
+        return this.coaches.get(s);
     }
 
 
     public Set<Coach> getAll(){
-        return this.coachSet;
+        Collection<Coach> coaches1 = this.coaches.values();
+        Set<Coach> set = new HashSet<>();
+        set.addAll(coaches1);
+        return set;
     }
+
 }

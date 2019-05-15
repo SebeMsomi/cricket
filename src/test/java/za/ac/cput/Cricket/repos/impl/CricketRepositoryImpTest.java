@@ -5,11 +5,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import za.ac.cput.Cricket.domain.Cricket;
-import za.ac.cput.Cricket.repos.CricketRepos;
+import za.ac.cput.Cricket.repos.interfaces.CricketRepos;
 
 import java.util.Set;
-
-import static org.junit.Assert.*;
 
 public class CricketRepositoryImpTest {
     private CricketRepos repository;

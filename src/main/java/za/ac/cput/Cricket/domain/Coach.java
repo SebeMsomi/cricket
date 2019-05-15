@@ -3,7 +3,7 @@ package za.ac.cput.Cricket.domain;
 public class Coach {
     private String experience;
     private int age;
-    private String name;
+    private String name, coachId;
 
     private Coach(){}
 
@@ -12,6 +12,7 @@ public class Coach {
         this.age = builder.age;
         this.experience = builder.experience;
         this.name = builder.name;
+        this.coachId = builder.coachId;
     }
 
     public String getName()
@@ -27,14 +28,23 @@ public class Coach {
         return age;
     }
 
+    public String getCoachId() {
+        return coachId;
+    }
+
     public static class Builder
     {
-        private String name, experience;
+        private String name, experience, coachId;
         private int age;
 
         public Builder name(String name)
         {
             this.name = name;
+            return this;
+        }
+        public Builder coachId(String coachId)
+        {
+            this.coachId = coachId;
             return this;
         }
 
@@ -61,6 +71,7 @@ public class Coach {
                 "experience='" + experience + '\'' +
                 ", age=" + age +
                 ", name='" + name + '\'' +
+                ", coachId='" + coachId + '\'' +
                 '}';
     }
 }

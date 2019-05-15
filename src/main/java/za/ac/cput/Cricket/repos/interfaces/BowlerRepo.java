@@ -1,7 +1,8 @@
-package za.ac.cput.Cricket.repos;
+package za.ac.cput.Cricket.repos.interfaces;
 
 import za.ac.cput.Cricket.domain.Bowler;
 import za.ac.cput.Cricket.domain.Team;
+import za.ac.cput.Cricket.repos.Repo;
 
 import java.util.Set;
 

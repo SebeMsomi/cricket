@@ -1,45 +1,52 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Drink;
+import za.ac.cput.Cricket.repos.interfaces.DrinkRepo;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
-public class DrinkRepoImp {
+public class DrinkRepoImp implements DrinkRepo {
     private static DrinkRepoImp repository = null;
-    private Set<Drink> drinkSet;
+    private Map<String, Drink> drinks;
 
     private DrinkRepoImp(){
-        this.drinkSet = new HashSet<>();
+        this.drinks = (Map<String, Drink>) new HashSet<Object>();
     }
 
-    public static DrinkRepoImp getRepository(){
+    public static DrinkRepo getRepository(){
         if (repository == null) repository = new DrinkRepoImp();
         return repository;
     }
 
-
-    public Drink create(Drink drink){
-        this.drinkSet.add(drink);
-        return drink;
-    }
-
-    public Drink read(String drinkId){
-        // find the course that matches the id and return it if exist
-        return null;
-    }
-
-    public void delete(String coachID) {
-        // find the course, delete it if it exist
-    }
-
-    public Drink update(Drink drink){
-        // find the course, update it and delete it if it exists
-        return drink;
-    }
-
-
     public Set<Drink> getAll(){
-        return this.drinkSet;
+        Collection<Drink> drinks1 = this.drinks.values();
+        Set<Drink> set = new HashSet<>();
+        set.addAll(drinks1);
+        return set;
+    }
+
+    @Override
+    public Drink create(Drink drink) {
+        this.drinks.put(drink.getDrinkId(),drink);
+        return drink;
+    }
+
+    @Override
+    public Drink update(Drink drink) {
+        this.drinks.replace(drink.getDrinkId(),drink);
+        return this.drinks.get(drink.getDrinkId());
+    }
+
+    @Override
+    public void delete(String s) {
+        this.drinks.remove(s);
+    }
+
+    @Override
+    public Drink read(String s) {
+        return this.drinks.get(s);
     }
 }

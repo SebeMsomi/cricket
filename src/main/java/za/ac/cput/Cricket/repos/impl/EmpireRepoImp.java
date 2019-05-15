@@ -1,45 +1,52 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Empire;
+import za.ac.cput.Cricket.repos.interfaces.EmpireRepo;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
-public class EmpireRepoImp {
+public class EmpireRepoImp implements EmpireRepo {
     private static EmpireRepoImp repository = null;
-    private Set<Empire> empires;
+    private Map<String, Empire> empires;
 
     private EmpireRepoImp(){
-        this.empires = new HashSet<>();
+        this.empires = (Map<String, Empire>) new HashSet<Object>();
     }
 
-    public static EmpireRepoImp getRepository(){
+    public static EmpireRepo getRepository(){
         if (repository == null) repository = new EmpireRepoImp();
         return repository;
     }
 
-
-    public Empire create(Empire empire){
-        this.empires.add(empire);
-        return empire;
-    }
-
-    public Empire read(String EmpireId){
-        // find the course that matches the id and return it if exist
-        return null;
-    }
-
-    public void delete(String EmpireId) {
-        // find the course, delete it if it exist
-    }
-
-    public Empire update(Empire empire){
-        // find the course, update it and delete it if it exists
-        return empire;
-    }
-
-
     public Set<Empire> getAll(){
-        return this.empires;
+        Collection<Empire> empires1 = this.empires.values();
+        Set<Empire> set = new HashSet<>();
+        set.addAll(empires1);
+        return set;
+    }
+
+    @Override
+    public Empire create(Empire empire) {
+        this.empires.put(empire.getEmpireId(),empire);
+        return empire;
+    }
+
+    @Override
+    public Empire update(Empire empire) {
+        this.empires.replace(empire.getEmpireId(),empire);
+        return this.empires.get(empire.getEmpireId());
+    }
+
+    @Override
+    public void delete(String s) {
+        this.empires.remove(s);
+    }
+
+    @Override
+    public Empire read(String s) {
+        return this.empires.get(s);
     }
 }

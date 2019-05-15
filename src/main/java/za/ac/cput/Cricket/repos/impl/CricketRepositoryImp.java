@@ -1,75 +1,51 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Cricket;
-import za.ac.cput.Cricket.repos.CricketRepos;
+import za.ac.cput.Cricket.repos.interfaces.CricketRepos;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class CricketRepositoryImp implements CricketRepos {
 
     private static CricketRepos repository = null;
-    private Set<Cricket> crickets;
+    private Map<String, Cricket> crickets;
 
     private CricketRepositoryImp() {
-        this.crickets = new HashSet<>();
+        this.crickets = new HashMap<>();
     }
-
-
-
     public static CricketRepos getRepository(){
         if (repository == null) repository = new CricketRepositoryImp();
         return repository;
     }
 
-    //@Override
-    public Cricket create(Cricket cricket) {
 
-        this.crickets.add(cricket);
-        return cricket;
-    }
-
-
-    /*public void delete(Cricket cricket) {
-        this.crickets.remove(cricket);
-    }*/
-
-    private Cricket findCricket(String team1) {
-        return this.crickets.stream().filter(cricket -> cricket.getTeam1().equals(team1)).findAny().orElse(null);
-
-    }
-    public Cricket read(final String cricketId) {
-        Cricket cricket = findCricket(cricketId);
-
-        if(cricket != null) {
-
-            return findCricket(cricketId);
-        }
-        else{
-            return null;
-        }
-    }
-
-
-    public Cricket update(Cricket cricket) {
-    Cricket cricket1 = findCricket(cricket.getCricketId());
-        if(crickets.contains(cricket1))
-        {
-            crickets.remove(cricket1);
-            crickets.add(cricket);
-        }
-        return cricket1;
+    public Set<Cricket> getAll() {
+        Collection<Cricket> crickets = this.crickets.values();
+        Set<Cricket> set = new HashSet<>();
+        set.addAll(crickets);
+        return set;
     }
 
     @Override
-    public void delete(String id) {
-        Cricket cricket = findCricket(id);
-        crickets.remove(cricket);
-
+    public Cricket create(Cricket cricket) {
+        this.crickets.put(cricket.getCricketId(),cricket);
+        return cricket;
     }
 
-    public Set<Cricket> getAll() {
-        return this.crickets;
+    @Override
+    public Cricket update(Cricket cricket) {
+        this.crickets.replace(cricket.getCricketId(),cricket);
+        return this.crickets.get(cricket.getCricketId());
+    }
+
+    @Override
+    public void delete(String s) {
+        this.crickets.remove(s);
+    }
+
+    @Override
+    public Cricket read(String s) {
+        return this.crickets.get(s);
     }
 }
 

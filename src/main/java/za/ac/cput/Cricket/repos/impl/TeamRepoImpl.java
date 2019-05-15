@@ -1,7 +1,7 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Team;
-import za.ac.cput.Cricket.repos.TeamRepo;
+import za.ac.cput.Cricket.repos.interfaces.TeamRepo;
 
 import java.util.HashSet;
 import java.util.Set;

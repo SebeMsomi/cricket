@@ -1,7 +1,7 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Cricket;
-import za.ac.cput.Cricket.repos.CricketRepos;
+import za.ac.cput.Cricket.repos.interfaces.CricketRepos;
 import java.util.Set;
 
 public class DataBaseImp implements CricketRepos {

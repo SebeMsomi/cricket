@@ -1,45 +1,50 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Country;
-import za.ac.cput.Cricket.repos.CountryRepo;
+import za.ac.cput.Cricket.repos.interfaces.CountryRepo;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class CountryRepoImp {
+public class CountryRepoImp implements CountryRepo {
     private static CountryRepoImp repository = null;
-    private Set<Country> countrySet;
+    private Map<String, Country> countryMap;
 
     private CountryRepoImp() {
-        this.countrySet = new HashSet<>();
+        this.countryMap = new HashMap<>();
     }
 
-    public static CountryRepoImp getRepository(){
+    public static CountryRepo getRepository(){
         if(repository == null) repository = new CountryRepoImp();
         return repository;
     }
 
-    public Country create(Country country){
-        this.countrySet.add(country);
+
+    @Override
+    public Country create(Country country) {
+        this.countryMap.put(country.getCountryID(),country);
         return country;
     }
 
-    public Country read(String countryId){
-        //find the student in the set and return it if it exist
-        return null;
-    }
-
+    @Override
     public Country update(Country country) {
-        // find the student, update it and return the updated student
-        return null;
+        this.countryMap.replace(country.getCountryID(),country);
+        return this.countryMap.get(country.getCountryID());
     }
 
-    public void delete(String countryId) {
-        //find the student and delete it if it exists
+    @Override
+    public void delete(String s) {
+        this.countryMap.remove(s);
+    }
 
+    @Override
+    public Country read(String s) {
+        return this.countryMap.get(s);
     }
 
     public Set<Country> getAll(){
-        return this.countrySet;
+        Collection<Country> countries = this.countryMap.values();
+        Set<Country> set = new HashSet<>();
+        set.addAll(countries);
+        return set;
     }
 }

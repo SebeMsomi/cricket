@@ -1,66 +1,49 @@
 package za.ac.cput.Cricket.repos.impl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.Cricket.domain.Batsman;
-import za.ac.cput.Cricket.repos.BatsmanInterface;
+import za.ac.cput.Cricket.repos.interfaces.BatsmanInterface;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
-public class BatsmanRepoImp {
-    private static BatsmanInterface repository = null;
-    private Set<Batsman> batsmans;
+@Repository
+public class BatsmanRepoImp implements BatsmanInterface {
+    private static BatsmanRepoImp repository = null;
+    private Map<String, Batsman> batsmans;
 
     private BatsmanRepoImp() {
-        this.batsmans = new HashSet<>();
+        this.batsmans = (Map<String, Batsman>) new HashSet<Object>();
     }
 
     public static BatsmanInterface getRepository(){
-        if (repository == null) repository = (BatsmanInterface) new BatsmanRepoImp();
+        if (repository == null) repository = new BatsmanRepoImp();
         return repository;
     }
-
-    private Batsman findBatsman(String id) {
-        return this.batsmans.stream().filter(batsman -> batsman.equals(id)).findAny().orElse(null);
-
-    }
-
-    public Batsman read(final String id) {
-        Batsman batsman = findBatsman(id);
-
-        if(batsman != null) {
-
-            return findBatsman(id);
-        }
-        else{
-            return null;
-        }
-    }
-
-    //@Override
-    public Batsman create(Batsman batsman) {
-        this.batsmans.add(batsman);
+    public Batsman create(Batsman batsman){
+        this.batsmans.put(batsman.toString(),batsman);
         return batsman;
     }
 
-    public void delete(String id) {
-        Batsman batsman1 = findBatsman(id);
-        this.batsmans.remove(id);
+    public Batsman read(String batId){
+        return this.batsmans.get(batId);
+    }
+
+    public void delete(String batsmanId) {
+        this.batsmans.remove(batsmanId);
     }
 
     public Batsman update(Batsman batsman) {
-
-        Batsman batsman1 = findBatsman(batsman.toString());
-
-        if(batsmans.contains(batsman))
-        {
-            batsmans.remove(batsman);
-            batsmans.add(batsman);
-        }
-        return batsman1;
-
+        this.batsmans.replace(batsman.toString(),batsman);
+        return this.batsmans.get(batsman.toString());
     }
 
     public Set<Batsman> getAll() {
-        return this.batsmans;
+        Collection<Batsman> batsmans = this.batsmans.values();
+        Set<Batsman> set = new HashSet<>();
+        set.addAll(batsmans);
+        return set;
     }
 }
