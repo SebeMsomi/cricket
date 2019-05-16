@@ -1,10 +1,11 @@
 package za.ac.cput.Cricket.repos.impl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.Cricket.domain.Cricket;
 import za.ac.cput.Cricket.repos.interfaces.CricketRepos;
 
 import java.util.*;
-
+@Repository
 public class CricketRepositoryImp implements CricketRepos {
 
     private static CricketRepos repository = null;
