@@ -5,6 +5,7 @@ import java.security.KeyStore;
 public class Fast {
     private double mph;
 
+
     private Fast(){}
 
     private Fast(Builder builder) {

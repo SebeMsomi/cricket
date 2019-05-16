@@ -1,45 +1,56 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Facilities;
+import za.ac.cput.Cricket.repos.interfaces.FacilityRepo;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
-public class FacilityRepoImp {
+public class FacilityRepoImp implements FacilityRepo {
     private static FacilityRepoImp repository = null;
-    private Set<Facilities> facilities;
+    private Map<String, Facilities> facilities;
 
     private FacilityRepoImp(){
-        this.facilities = new HashSet<>();
+        this.facilities = (Map<String, Facilities>) new HashSet<Object>();
     }
 
-    public static FacilityRepoImp getRepository(){
+    public static FacilityRepo getRepository(){
         if (repository == null) repository = new FacilityRepoImp();
         return repository;
     }
 
 
-    public Facilities create(Facilities drink){
-        this.facilities.add(drink);
-        return drink;
-    }
 
-    public Facilities read(String drinkId){
-        // find the course that matches the id and return it if exist
-        return null;
-    }
-
-    public void delete(String coachID) {
-        // find the course, delete it if it exist
-    }
-
-    public Facilities update(Facilities drink){
-        // find the course, update it and delete it if it exists
-        return drink;
-    }
 
 
     public Set<Facilities> getAll(){
-        return this.facilities;
+        Collection<Facilities> facilities1 = this.facilities.values();
+        Set<Facilities> set = new HashSet<>();
+        set.addAll(facilities1);
+        return set;
+    }
+
+    @Override
+    public Facilities create(Facilities facilities) {
+        this.facilities.put(facilities.hotelId(),facilities);
+        return facilities;
+    }
+
+    @Override
+    public Facilities update(Facilities facilities) {
+        this.facilities.replace(facilities.hotelId(),facilities);
+        return this.facilities.get(facilities.hotelId());
+    }
+
+    @Override
+    public void delete(String s) {
+        this.facilities.remove(s);
+    }
+
+    @Override
+    public Facilities read(String s) {
+        return this.facilities.get(s);
     }
 }

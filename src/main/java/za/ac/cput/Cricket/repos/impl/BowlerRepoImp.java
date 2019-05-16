@@ -1,7 +1,6 @@
 package za.ac.cput.Cricket.repos.impl;
 import org.springframework.stereotype.Repository;
 import za.ac.cput.Cricket.domain.Bowler;
-import za.ac.cput.Cricket.domain.Team;
 import za.ac.cput.Cricket.repos.interfaces.BowlerRepo;
 
 import java.util.Collection;
@@ -51,7 +50,7 @@ public class BowlerRepoImp implements BowlerRepo{
 
 
     @Override
-    public Set<Team> getAll() {
+    public Set<Bowler> getAll() {
         return null;
     }
 }
