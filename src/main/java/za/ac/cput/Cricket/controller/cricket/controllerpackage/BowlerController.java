@@ -2,27 +2,26 @@ package za.ac.cput.Cricket.controller.cricket.controllerpackage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import za.ac.cput.Cricket.domain.Batsman;
-import za.ac.cput.Cricket.service.cricket.serviceInterface.BatsmanService;
+import za.ac.cput.Cricket.domain.Bowler;
+import za.ac.cput.Cricket.service.cricket.serviceInterface.BowlerService;
 
 import java.util.Set;
 
 @RestController
-@RequestMapping("/batsman")
-public class BatsmanController {
+@RequestMapping
+public class BowlerController {
     @Autowired
-    private BatsmanService service;
 
+    private BowlerService service;
     @PostMapping("/create")
     @ResponseBody
-    public Batsman create(Batsman batsman) {
-        return service.create(batsman);
+    public Bowler create(Bowler bowler) {
+        return service.create(bowler);
     }
-
     @PostMapping("/update")
     @ResponseBody
-    public Batsman update(Batsman batsman) {
-        return service.update(batsman);
+    public Bowler update(Bowler bowler) {
+        return service.update(bowler);
     }
 
     @GetMapping("/delete/{id}")
@@ -34,14 +33,13 @@ public class BatsmanController {
 
     @GetMapping("/read/{id}")
     @ResponseBody
-    public Batsman read(@PathVariable String id) {
+    public Bowler read(@PathVariable String id) {
         return service.read(id);
     }
 
     @GetMapping("/read/all")
     @ResponseBody
-    public Set<Batsman> getAll() {
+    public Set<Bowler> getAll() {
         return service.getAll();
     }
-
 }

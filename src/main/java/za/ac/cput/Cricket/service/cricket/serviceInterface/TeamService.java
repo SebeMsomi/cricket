@@ -1,4 +1,4 @@
-package za.ac.cput.Cricket.service.cricket;
+package za.ac.cput.Cricket.service.cricket.serviceInterface;
 
 import za.ac.cput.Cricket.domain.Cricket;
 

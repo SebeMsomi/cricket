@@ -3,7 +3,7 @@ package za.ac.cput.Cricket.service.cricket.cricket.impl;
 import za.ac.cput.Cricket.domain.Cricket;
 import za.ac.cput.Cricket.repos.interfaces.CricketRepos;
 import za.ac.cput.Cricket.repos.impl.CricketRepositoryImp;
-import za.ac.cput.Cricket.service.cricket.CricketSer;
+import za.ac.cput.Cricket.service.cricket.serviceInterface.CricketSer;
 
 import java.util.Set;
 
