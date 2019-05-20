@@ -1,4 +1,4 @@
-package za.ac.cput.Cricket.controller.cricket;
+package za.ac.cput.Cricket.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

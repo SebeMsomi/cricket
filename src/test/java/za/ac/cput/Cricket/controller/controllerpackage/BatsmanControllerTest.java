@@ -1,4 +1,4 @@
-package za.ac.cput.Cricket.controller.cricket.controllerpackage;
+package za.ac.cput.Cricket.controller.controllerpackage;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

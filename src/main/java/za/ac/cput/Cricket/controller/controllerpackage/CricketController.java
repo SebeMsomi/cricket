@@ -1,4 +1,4 @@
-package za.ac.cput.Cricket.controller.cricket.controllerpackage;
+package za.ac.cput.Cricket.controller.controllerpackage;
 
 import za.ac.cput.Cricket.domain.Cricket;
 import za.ac.cput.Cricket.factory.CricketFactory;

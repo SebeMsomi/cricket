@@ -1,11 +1,12 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Ground;
+import za.ac.cput.Cricket.repos.interfaces.GroundRepo;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class GroundRepoImp {
+public class GroundRepoImp implements GroundRepo{
     private static GroundRepoImp repository = null;
     private Set<Ground> grounds;
 
@@ -13,7 +14,7 @@ public class GroundRepoImp {
         this.grounds = new HashSet<>();
     }
 
-    public static GroundRepoImp getRepository(){
+    public static GroundRepo getRepository(){
         if (repository == null) repository = new GroundRepoImp();
         return repository;
     }

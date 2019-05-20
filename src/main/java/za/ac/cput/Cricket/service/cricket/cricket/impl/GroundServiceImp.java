@@ -12,7 +12,7 @@ public class GroundServiceImp  implements GroundService{
     private GroundRepo repository;
 
     private GroundServiceImp(){
-        this.repository =  GroundRepo.getRepository();
+        this.repository =  GroundRepoImp.getRepository();
     }
     public GroundService getService(){
         if (service == null) service = new GroundServiceImp();
