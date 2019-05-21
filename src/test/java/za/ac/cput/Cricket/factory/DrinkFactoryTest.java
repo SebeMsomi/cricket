@@ -10,9 +10,10 @@ public class DrinkFactoryTest {
 
     @Test
     public void getDrink() {
-        int drinkTime = 12;
+        String drinkTime = "";
+        String drinkID = "";
 
-        Drink d = DrinkFactory.getDrink(drinkTime);
+        Drink d = DrinkFactory.getDrink(drinkTime,drinkID);
         Assert.assertTrue("Lunch start at: ", d.equals(d));
     }
 }

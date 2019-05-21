@@ -1,45 +1,52 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Lunch;
+import za.ac.cput.Cricket.repos.interfaces.LunchRepo;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
-public class LunchRepoImp {
+public class LunchRepoImp implements LunchRepo{
     private static LunchRepoImp repository = null;
-    private Set<Lunch> lunches;
+    private Map<String, Lunch> lunches;
 
     private LunchRepoImp(){
-        this.lunches = new HashSet<>();
+        this.lunches = (Map<String, Lunch>) new HashSet<Object>();
     }
 
-    public static LunchRepoImp getRepository(){
+    public static LunchRepo getRepository(){
         if (repository == null) repository = new LunchRepoImp();
         return repository;
     }
 
 
+
     public Lunch create(Lunch lunch){
-        this.lunches.add(lunch);
+        this.lunches.put(lunch.getTime(),lunch);
         return lunch;
     }
 
-    public Lunch read(String lunchId){
-        // find the course that matches the id and return it if exist
-        return null;
+    public Lunch read(String s){
+        return this.lunches.get(s);
+
     }
 
-    public void delete(String lunchId) {
-        // find the course, delete it if it exist
-    }
+    public void delete(String s) {
+        this.lunches.remove(s);    }
 
     public Lunch update(Lunch lunch){
-        // find the course, update it and delete it if it exists
-        return lunch;
+        this.lunches.replace(lunch.getTime(),lunch);
+        return this.lunches.get(lunch.getTime());
+
     }
 
 
     public Set<Lunch> getAll(){
-        return this.lunches;
+        Collection<Lunch> lunches1 = this.lunches.values();
+        Set<Lunch> set = new HashSet<>();
+        set.addAll(lunches1);
+        return set;
     }
 }

@@ -3,7 +3,7 @@ package za.ac.cput.Cricket.domain;
 import java.security.KeyStore;
 
 public class Fast {
-    private double mph;
+    private String mph;
 
 
     private Fast(){}
@@ -12,13 +12,13 @@ public class Fast {
         this.mph = builder.mph;
     }
 
-    public double getMph() {
+    public String getMph() {
         return mph;
     }
 
     public static class Builder{
-            private double mph;
-        public Builder mph(double mph) {
+            private String mph;
+        public Builder mph(String mph) {
             this.mph = mph;
             return this;
         }

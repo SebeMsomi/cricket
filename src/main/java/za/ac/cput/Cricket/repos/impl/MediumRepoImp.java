@@ -1,45 +1,50 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.Medium;
+import za.ac.cput.Cricket.repos.interfaces.MediumRepo;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
-public class MediumRepoImp {
+public class MediumRepoImp implements MediumRepo{
     private static MediumRepoImp repository = null;
-    private Set<Medium> mediumSet;
+    private Map<String, Medium> mediumSet;
 
     private MediumRepoImp(){
-        this.mediumSet = new HashSet<>();
+        this.mediumSet = (Map<String, Medium>) new HashSet<Object>();
     }
 
-    public static MediumRepoImp getRepository(){
+    public static MediumRepo getRepository(){
         if (repository == null) repository = new MediumRepoImp();
         return repository;
     }
 
-
     public Medium create(Medium medium){
-        this.mediumSet.add(medium);
+        this.mediumSet.put(medium.getSpeed(),medium);
         return medium;
     }
 
-    public Medium read(String mediumId){
-        // find the course that matches the id and return it if exist
-        return null;
+    public Medium read(String s){
+        return this.mediumSet.get(s);
+
     }
 
-    public void delete(String mediumId) {
-        // find the course, delete it if it exist
-    }
+    public void delete(String s) {
+        this.mediumSet.remove(s);    }
 
-    public Medium update(Medium medium){
-        // find the course, update it and delete it if it exists
-        return medium;
+    public Medium update(Medium leg){
+        this.mediumSet.replace(leg.getSpeed(),leg);
+        return this.mediumSet.get(leg.getSpeed());
+
     }
 
 
     public Set<Medium> getAll(){
-        return this.mediumSet;
+        Collection<Medium> legs1 = this.mediumSet.values();
+        Set<Medium> set = new HashSet<>();
+        set.addAll(legs1);
+        return set;
     }
 }

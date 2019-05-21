@@ -13,7 +13,8 @@ public class CoachFactoryTest {
         String name = "Ottis Gibson";
         String experience = "20 years";
         int age = 50;
-        Coach c = CoachFactory.getCoach(name,age,experience);
+        String coachId = "";
+        Coach c = CoachFactory.getCoach(name,age,experience, coachId);
         System.out.println(c);
         Assert.assertNotEquals(c.getName(),c.getAge(),c.getExperience());
     }

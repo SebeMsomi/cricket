@@ -11,7 +11,7 @@ public class CountryfactoryTest {
     @Test
     public void getCountry() {
         String countryName = "South Africe";
-        int countryID = 27;
+        String countryID ="";
         Country c = Countryfactory.getCountry(countryName, countryID);
         Assert.assertNotNull(c.getCounrtyName(), countryID);
         System.out.println(countryID + " " +countryName);

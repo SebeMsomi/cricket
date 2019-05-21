@@ -10,8 +10,8 @@ public class MediumFactoryTest {
 
     @Test
     public void getMedium() {
-        int speed = 120;
-        Medium f = MediumFactory.getMedium(120);
+        String speed = "120";
+        Medium f = MediumFactory.getMedium(speed);
         Assert.assertNotNull(speed);
     }
 }

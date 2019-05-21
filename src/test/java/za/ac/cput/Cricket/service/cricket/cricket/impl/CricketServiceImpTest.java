@@ -31,14 +31,6 @@ public class CricketServiceImpTest {
         Assert.assertNotNull(created);
         Assert.assertSame(created, this.cricket);
     }
-    /*@Test
-   /* public void c_update() {
-        String newCricket = "Australia and New Zealand";
-        Cricket updated = new Cricket.Builder().copy(getSaved())
-        System.out.println("In update, updated = " + updated);
-        this.repository.update(updated);
-        Assert.assertSame(newCricket, updated.getCricketId());
-    }*/
 
     @Test
     public void e_delete() {

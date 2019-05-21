@@ -3,15 +3,17 @@ package za.ac.cput.Cricket.repos.impl;
 import za.ac.cput.Cricket.domain.Ground;
 import za.ac.cput.Cricket.repos.interfaces.GroundRepo;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class GroundRepoImp implements GroundRepo{
     private static GroundRepoImp repository = null;
-    private Set<Ground> grounds;
+    private Map<String, Ground> grounds;
 
     private GroundRepoImp(){
-        this.grounds = new HashSet<>();
+        this.grounds = (Map<String, Ground>) new HashSet<Object>();
     }
 
     public static GroundRepo getRepository(){
@@ -20,8 +22,9 @@ public class GroundRepoImp implements GroundRepo{
     }
 
 
-    public Ground create(Ground ground){
-        this.grounds.add(ground);
+    @Override
+    public Ground create(Ground ground) {
+        this.grounds.put(ground.getGroundId(),ground);
         return ground;
     }
 
@@ -41,6 +44,10 @@ public class GroundRepoImp implements GroundRepo{
 
 
     public Set<Ground> getAll(){
-        return this.grounds;
+        Collection<Ground> coaches1 = this.grounds.values();
+        Set<Ground> set = new HashSet<>();
+        set.addAll(coaches1);
+        return set;
+
     }
 }

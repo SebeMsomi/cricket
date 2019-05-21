@@ -9,8 +9,9 @@ public class GroundFactoryTest {
     public void getGround() {
         int size = 150;
         int capacity = 66000;
+        String groundId = "";
 
-        Ground g = GroundFactory.getGround(size,capacity);
+        Ground g = GroundFactory.getGround(size,capacity,groundId);
         System.out.println(g);
 
         Assert.assertNotNull("The biggest size and capacity are as follows",g);

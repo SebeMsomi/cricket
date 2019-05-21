@@ -10,7 +10,7 @@ public class FastFactoryTest {
 
     @Test
     public void getFast() {
-        double mph = 100.23;
+        String mph = "100.23";
         Fast f = FastFactory.getFast(mph);
         Assert.assertNotNull(mph);
     }

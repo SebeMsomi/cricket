@@ -1,46 +1,51 @@
 package za.ac.cput.Cricket.repos.impl;
 
 import za.ac.cput.Cricket.domain.League;
+import za.ac.cput.Cricket.repos.interfaces.LeagueRepo;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
-public class LeagueRepoImp {
+public class LeagueRepoImp implements LeagueRepo{
     private static LeagueRepoImp repository = null;
-    private Set<League> leagues;
+    private Map<String, League> leagues;
 
     private LeagueRepoImp(){
-        this.leagues = new HashSet<>();
+        this.leagues = (Map<String, League>) new HashSet<Object>();
     }
 
-    public static LeagueRepoImp getRepository(){
+    public static LeagueRepo getRepository(){
         if (repository == null) repository = new LeagueRepoImp();
         return repository;
     }
 
-
     public League create(League league){
-        this.leagues.add(league);
+        this.leagues.put(league.getName(),league);
         return league;
     }
 
-    public League read(String leagueId){
-        // find the course that matches the id and return it if exist
-        return null;
+    public League read(String leagueid){
+        return this.leagues.get(leagueid);
+
     }
 
-    public void delete(String leagueId) {
-        // find the course, delete it if it exist
-    }
+    public void delete(String leagueid) {
+        this.leagues.remove(leagueid);    }
 
-    public League update(League drink){
-        // find the course, update it and delete it if it exists
-        return drink;
+    public League update(League fast){
+        this.leagues.replace(fast.getName(),fast);
+        return this.leagues.get(fast.getName());
+
     }
 
 
     public Set<League> getAll(){
-        return this.leagues;
+        Collection<League> leagues1 = this.leagues.values();
+        Set<League> set = new HashSet<>();
+        set.addAll(leagues1);
+        return set;
     }
 
 }

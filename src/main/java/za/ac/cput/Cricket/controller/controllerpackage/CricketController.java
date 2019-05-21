@@ -13,7 +13,7 @@ import java.util.Set;
 @RequestMapping("cricket")
 public class CricketController {
     @Autowired
-    private CricketServiceImp service;
+    private CricketServiceImp cricketServiceImp;
 
     @GetMapping("/create/{cricketName}")
 
@@ -21,12 +21,27 @@ public class CricketController {
     Cricket create(@PathVariable String team1, String team2) {
         Cricket cricket = CricketFactory.getCricket(team1,team2);
 
-        return service.create(cricket);
+        return cricketServiceImp.create(cricket);
+    }
+    @GetMapping(path = "/find/{id}")
+    public Cricket findById(@PathVariable String id){
+        return cricketServiceImp.read(id);
+    }
+    @PutMapping("/update")
+    public Cricket update(@RequestBody Cricket t){
+        return cricketServiceImp.update(t);
+    }
+
+    @DeleteMapping(path = "/delete/{id}")
+    public void delete(@PathVariable String id){
+
+        cricketServiceImp.delete(id);
+
     }
 
     @GetMapping("/getall")
     @ResponseBody
     public Set<Cricket> getAll(){
-        return service.getAll();
+        return cricketServiceImp.getAll();
     }
 }

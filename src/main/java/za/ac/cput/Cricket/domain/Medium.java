@@ -1,7 +1,7 @@
 package za.ac.cput.Cricket.domain;
 
 public class Medium {
-    private int speed;
+    private String speed;
 
     private Medium(){}
 
@@ -9,13 +9,13 @@ public class Medium {
         this.speed = builder.speed;
     }
 
-    public int getSpeed() {
+    public String getSpeed() {
         return speed;
     }
 
     public static class Builder{
-        private int speed;
-        public Builder speed(int speed) {
+        private String speed;
+        public Builder speed(String speed) {
             this.speed = speed;
             return this;
         }

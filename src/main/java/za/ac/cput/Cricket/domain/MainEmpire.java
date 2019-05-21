@@ -5,6 +5,10 @@ public class MainEmpire {
 
     private MainEmpire(){}
 
+    public String getRole() {
+        return role;
+    }
+
     private MainEmpire(Builder builder) {
 
 

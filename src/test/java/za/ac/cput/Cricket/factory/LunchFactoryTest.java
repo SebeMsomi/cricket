@@ -10,7 +10,7 @@ public class LunchFactoryTest {
 
     @Test
     public void getLunch() {
-        int lunchTime = 12;
+        String lunchTime = "";
 
         Lunch l = LunchFactory.getLunch(lunchTime);
         Assert.assertTrue("Lunch start at: ", l.equals(l));

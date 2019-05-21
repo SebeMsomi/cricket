@@ -1,7 +1,7 @@
 package za.ac.cput.Cricket.domain;
 
 public class Lunch {
-    private int time;
+    private String time;
 
     private Lunch(){}
 
@@ -12,14 +12,14 @@ public class Lunch {
         this.time = builder.time;
 
     }
-    public int getTime() {
+    public String getTime() {
         return time;
     }
     public static class Builder
     {
-        private int time;
+        private String time;
 
-        public Builder time(int name)
+        public Builder time(String time)
         {
             this.time = time;
             return this;
