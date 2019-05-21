@@ -11,9 +11,10 @@ public class BatsmanfactoriesTest {
     @Test
     public void getBatsman() {
 
-        int rating = 0, runSoored = 0;
+        String batsmanId = "";
+        int runSoored = 0;
 
-        Batsman b = Batsmanfactories.getBatsman(rating,runSoored);
+        Batsman b = Batsmanfactories.getBatsman(batsmanId,runSoored);
         Assert.assertNotNull(b);
 
     }

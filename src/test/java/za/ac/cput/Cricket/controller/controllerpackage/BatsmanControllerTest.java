@@ -33,7 +33,7 @@ public class BatsmanControllerTest {
 
     @Test
     public void create() {
-        Batsman batsman = Batsmanfactories.getBatsman(100 , 48);
+        Batsman batsman = Batsmanfactories.getBatsman("See" , 48);
         ResponseEntity<Batsman> postResponse = restTemplate.postForEntity(baseURL + "/create", batsman, Batsman.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
