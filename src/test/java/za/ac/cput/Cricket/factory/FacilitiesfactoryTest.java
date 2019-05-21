@@ -12,9 +12,9 @@ public class FacilitiesfactoryTest {
     public void getCourse() {
         String kit = "First Aid Kits & Physio Supplies";
         String medical = "";
-        String hotelName= "";
+        String hotelId= "";
 
-        Facilities f = Facilitiesfactory.getCourse(kit,medical,hotelName);
-        Assert.assertSame(kit,medical,hotelName);
+        Facilities f = Facilitiesfactory.getCourse(kit,medical,hotelId);
+        Assert.assertSame(kit,medical,hotelId);
     }
 }

@@ -1,15 +1,15 @@
 package za.ac.cput.Cricket.domain;
 
 public class Facilities {
-    private String hotelId;
-    private String kit;
-    private String medical;
+    private static String hotelId;
+    private static String kit;
+    private static String medical;
 
 
     private Facilities(){}
 
     private Facilities(Builder builder) {
-        this.hotelId = builder.hotelName;
+        this.hotelId = builder.hotelId;
         this.kit = builder.kit;
         this.medical = builder.medical;
     }
@@ -28,15 +28,22 @@ public class Facilities {
 
     public static class Builder{
 
-        private String hotelName, medical, kit;
+        private String hotelId, medical, kit;
+
+        public Builder copy(Facilities facilities){
+            this.kit = Facilities.kit;
+            this.medical = Facilities.medical;
+            this.hotelId = Facilities.hotelId;
+            return this;
+        }
 
         public Builder medical(String medical) {
             this.medical = medical;
             return this;
         }
 
-        public Builder hotelName(String hotelName) {
-            this.hotelName = hotelName;
+        public Builder hotelId(String hotelId) {
+            this.hotelId = hotelId;
             return this;
         }
 
@@ -44,6 +51,7 @@ public class Facilities {
             this.kit = kit;
             return this;
         }
+
 
         public Facilities build() {
             return new Facilities(this);
