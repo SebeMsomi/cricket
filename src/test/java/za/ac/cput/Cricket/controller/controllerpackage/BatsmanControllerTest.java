@@ -8,8 +8,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
-import za.ac.cput.Cricket.domain.Batsman;
-import za.ac.cput.Cricket.factory.Batsmanfactories;
+import za.ac.cput.Cricket.domain.members.Batsman;
+import za.ac.cput.Cricket.factory.members.Batsmanfactories;
 
 import static org.junit.Assert.*;
 

@@ -8,8 +8,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
-import za.ac.cput.Cricket.domain.Bowler;
-import za.ac.cput.Cricket.factory.BowlerFactory;
+import za.ac.cput.Cricket.domain.members.Bowler;
+import za.ac.cput.Cricket.factory.members.BowlerFactory;
 
 import static org.junit.Assert.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

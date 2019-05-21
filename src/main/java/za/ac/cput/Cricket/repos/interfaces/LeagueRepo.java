@@ -2,7 +2,7 @@ package za.ac.cput.Cricket.repos.interfaces;
 
 
 
-import za.ac.cput.Cricket.domain.League;
+import za.ac.cput.Cricket.domain.records.League;
 import za.ac.cput.Cricket.repos.Repo;
 
 import java.util.Set;

@@ -1,6 +1,6 @@
 package za.ac.cput.Cricket.service.cricket.serviceInterface;
 
-import za.ac.cput.Cricket.domain.Country;
+import za.ac.cput.Cricket.domain.records.Country;
 import za.ac.cput.Cricket.service.Servic;
 
 import java.util.Set;

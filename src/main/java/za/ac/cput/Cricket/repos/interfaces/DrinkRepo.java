@@ -1,6 +1,6 @@
 package za.ac.cput.Cricket.repos.interfaces;
 
-import za.ac.cput.Cricket.domain.Drink;
+import za.ac.cput.Cricket.domain.recess.Drink;
 import za.ac.cput.Cricket.repos.Repo;
 
 import java.util.Set;
