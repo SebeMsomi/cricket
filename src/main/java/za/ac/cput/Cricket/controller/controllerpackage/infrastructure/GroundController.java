@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Cricket.domain.infrastructure.Ground;
 import za.ac.cput.Cricket.factory.infrastructure.GroundFactory;
-import za.ac.cput.Cricket.service.cricket.infrastructure.GroundServiceImp;
+import za.ac.cput.Cricket.service.infrastructure.GroundServiceImp;
 
 import java.util.Set;
 

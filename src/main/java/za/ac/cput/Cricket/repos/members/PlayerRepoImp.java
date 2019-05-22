@@ -1,45 +1,51 @@
 package za.ac.cput.Cricket.repos.members;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.Cricket.domain.members.Player;
+import za.ac.cput.Cricket.repos.interfaces.PlayerRepo;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class PlayerRepoImp {
+@Repository("InMemory")
+public class PlayerRepoImp implements PlayerRepo {
     private static PlayerRepoImp repository = null;
-    private Set<Player> players;
+    private Map<String, Player> players;
 
     private PlayerRepoImp(){
-        this.players = new HashSet<>();
+        this.players = new HashMap<>();
     }
 
-    public static PlayerRepoImp getRepository(){
+    public static PlayerRepo getRepository(){
         if (repository == null) repository = new PlayerRepoImp();
         return repository;
     }
 
+    public Set<Player> getAll(){
+        Collection<Player> empires1 = this.players.values();
+        Set<Player> set = new HashSet<>();
+        set.addAll(empires1);
+        return set;
+    }
 
-    public Player create(Player player){
-        this.players.add(player);
+    @Override
+    public Player create(Player player) {
+        this.players.put(player.getName(), player);
         return player;
     }
 
-    public Player read(String playerId){
-        // find the course that matches the id and return it if exist
-        return null;
+    @Override
+    public Player update(Player player) {
+        this.players.replace(player.getName(),player);
+        return this.players.get(player.getName());
     }
 
-    public void delete(String playerId) {
-        // find the course, delete it if it exist
+    @Override
+    public void delete(String s) {
+        this.players.remove(s);
     }
 
-    public Player update(Player drink){
-        // find the course, update it and delete it if it exists
-        return drink;
-    }
-
-
-    public Set<Player> getAll(){
-        return this.players;
+    @Override
+    public Player read(String s) {
+        return this.players.get(s);
     }
 }

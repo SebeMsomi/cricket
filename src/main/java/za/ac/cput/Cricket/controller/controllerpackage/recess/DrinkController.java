@@ -3,7 +3,7 @@ package za.ac.cput.Cricket.controller.controllerpackage.recess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Cricket.domain.recess.Drink;
-import za.ac.cput.Cricket.service.cricket.recess.DrinkServiceImp;
+import za.ac.cput.Cricket.service.recess.DrinkServiceImp;
 
 import java.util.Set;
 

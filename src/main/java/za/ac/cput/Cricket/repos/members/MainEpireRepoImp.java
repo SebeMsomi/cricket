@@ -3,17 +3,14 @@ package za.ac.cput.Cricket.repos.members;
 import za.ac.cput.Cricket.domain.members.MainEmpire;
 import za.ac.cput.Cricket.repos.interfaces.MainEmpireRepo;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MainEpireRepoImp implements MainEmpireRepo {
     private static MainEpireRepoImp repository = null;
     private Map<String, MainEmpire> mainEmpires;
 
     private MainEpireRepoImp(){
-        this.mainEmpires = (Map<String, MainEmpire>) new HashSet<Object>();
+        this.mainEmpires = new HashMap<>();
     }
 
     public static MainEmpireRepo getRepository(){

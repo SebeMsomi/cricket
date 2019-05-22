@@ -3,7 +3,7 @@ package za.ac.cput.Cricket.controller.controllerpackage.infrastructure;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Cricket.domain.infrastructure.Facilities;
-import za.ac.cput.Cricket.service.cricket.infrastructure.FacilityServiceImp;
+import za.ac.cput.Cricket.service.infrastructure.FacilityServiceImp;
 
 import java.util.Set;
 

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Cricket.domain.recess.Break;
-import za.ac.cput.Cricket.service.cricket.members.BreakServiceImpl;
+import za.ac.cput.Cricket.service.members.BreakServiceImpl;
 
 import java.util.Set;
 

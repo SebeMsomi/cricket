@@ -2,15 +2,13 @@ package za.ac.cput.Cricket.domain.members;
 
 import za.ac.cput.Cricket.domain.records.Cricket;
 
+import java.util.Objects;
 import java.util.Set;
 
 public class Player {
 
     private String name;
     private int age;
-
-    private Set<Team> team;
-
     private Player(){}
 
     private Player(Builder builder)
@@ -43,5 +41,30 @@ public class Player {
             return this;
         }
 
+        public Player build() {
+            return new Player(this);
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return age == player.age &&
+                name.equals(player.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

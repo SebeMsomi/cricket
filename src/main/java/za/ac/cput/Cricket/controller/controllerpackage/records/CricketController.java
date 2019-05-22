@@ -2,7 +2,7 @@ package za.ac.cput.Cricket.controller.controllerpackage.records;
 
 import za.ac.cput.Cricket.domain.records.Cricket;
 import za.ac.cput.Cricket.factory.records.CricketFactory;
-import za.ac.cput.Cricket.service.cricket.records.CricketServiceImp;
+import za.ac.cput.Cricket.service.records.CricketServiceImp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

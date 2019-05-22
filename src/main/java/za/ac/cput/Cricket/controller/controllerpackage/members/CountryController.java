@@ -3,7 +3,7 @@ package za.ac.cput.Cricket.controller.controllerpackage.members;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Cricket.domain.records.Country;
-import za.ac.cput.Cricket.service.cricket.records.CountryServiceImp;
+import za.ac.cput.Cricket.service.records.CountryServiceImp;
 
 import java.util.Set;
 
