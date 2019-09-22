@@ -5,11 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 import za.ac.cput.Cricket.domain.members.Leg;
 import za.ac.cput.Cricket.factory.members.LegFactory;
-import za.ac.cput.Cricket.repos.interfaces.LegRepo;
+import za.ac.cput.Cricket.repos.members.impl.LegRepoImp;
 
 import java.util.Set;
-
-import static org.junit.Assert.*;
 
 public class LegRepoImpTest {
     private LegRepo repository;

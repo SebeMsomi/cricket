@@ -1,9 +1,9 @@
 package za.ac.cput.Cricket.service.infrastructure;
 
 import za.ac.cput.Cricket.domain.infrastructure.Ground;
-import za.ac.cput.Cricket.repos.infrastructure.GroundRepoImp;
-import za.ac.cput.Cricket.repos.interfaces.GroundRepo;
-import za.ac.cput.Cricket.service.serviceInterface.GroundService;
+import za.ac.cput.Cricket.repos.infrastructure.impl.GroundRepoImp;
+import za.ac.cput.Cricket.repos.infrastructure.GroundRepo;
+import za.ac.cput.Cricket.service.members.GroundService;
 
 import java.util.Set;
 

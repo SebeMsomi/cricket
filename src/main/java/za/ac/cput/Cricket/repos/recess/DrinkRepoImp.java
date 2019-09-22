@@ -12,20 +12,13 @@ public class DrinkRepoImp implements DrinkRepo {
     private static DrinkRepoImp repository = null;
     private Map<String, Drink> drinks;
 
-    private DrinkRepoImp(){
-        this.drinks = (Map<String, Drink>) new HashSet<Object>();
-    }
-
     public static DrinkRepo getRepository(){
         if (repository == null) repository = new DrinkRepoImp();
         return repository;
     }
 
     public Set<Drink> getAll(){
-        Collection<Drink> drinks1 = this.drinks.values();
-        Set<Drink> set = new HashSet<>();
-        set.addAll(drinks1);
-        return set;
+        return new HashSet<>(drinks.values());
     }
 
     @Override

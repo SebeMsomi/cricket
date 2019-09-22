@@ -26,6 +26,18 @@ public class Facilities {
         return medical;
     }
 
+    public static void setHotelId(String hotelId) {
+        Facilities.hotelId = hotelId;
+    }
+
+    public static void setKit(String kit) {
+        Facilities.kit = kit;
+    }
+
+    public static void setMedical(String medical) {
+        Facilities.medical = medical;
+    }
+
     public static class Builder{
 
         private String hotelId, medical, kit;

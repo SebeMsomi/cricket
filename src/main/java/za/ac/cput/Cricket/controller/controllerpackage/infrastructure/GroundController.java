@@ -8,10 +8,9 @@ import za.ac.cput.Cricket.service.infrastructure.GroundServiceImp;
 
 import java.util.Set;
 
-@RestController
-@RequestMapping("ground")
+
 public class GroundController {
-    @Autowired
+    /*@Autowired
     private GroundServiceImp groundServiceImp;
 
     @GetMapping("/create/{groundName}")
@@ -42,5 +41,5 @@ public class GroundController {
     @ResponseBody
     public Set<Ground> getAll(){
         return groundServiceImp.getAll();
-    }
+    }*/
 }

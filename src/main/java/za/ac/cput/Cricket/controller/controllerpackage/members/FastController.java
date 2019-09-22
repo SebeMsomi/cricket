@@ -7,10 +7,10 @@ import za.ac.cput.Cricket.service.records.FastServiceImp;
 
 import java.util.Set;
 
-@RestController
-@RequestMapping("fast")
+//@RestController
+//@RequestMapping("fast")
 public class FastController {
-    @Autowired
+    /*@Autowired
     private FastServiceImp fastServiceImp;
 
     @PostMapping
@@ -37,5 +37,5 @@ public class FastController {
     @GetMapping("/getAll")
     public Set<Fast> getAll(){
         return fastServiceImp.getAll();
-    }
+    }*/
 }

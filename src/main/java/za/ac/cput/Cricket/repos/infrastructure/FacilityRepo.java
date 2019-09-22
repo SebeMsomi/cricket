@@ -1,0 +1,12 @@
+package za.ac.cput.Cricket.repos.infrastructure;
+
+
+
+import za.ac.cput.Cricket.domain.infrastructure.Facilities;
+import za.ac.cput.Cricket.repos.Repo;
+
+import java.util.Set;
+
+public interface FacilityRepo extends Repo<Facilities, String> {
+    Set<Facilities> getAll();
+}

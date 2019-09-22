@@ -17,37 +17,44 @@
 
   <name>cricket</name>
 
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
   <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
-
-
   <dependencies>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <version>2.1.4.RELEASE</version>
-
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-beans</artifactId>
-      <version>5.1.6.RELEASE</version>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.16</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <version>2.1.4.RELEASE</version>
       <optional>true</optional>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <version>2.1.4.RELEASE</version>
+    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <version>2.1.4.RELEASE</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>
@@ -57,10 +64,6 @@
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
-        </plugin>
-        <plugin>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-maven-plugin</artifactId>
         </plugin>
         <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
         <plugin>
@@ -96,17 +99,21 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
       </plugins>
     </pluginManagement>
-      <plugins>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <configuration>
-                  <source>8</source>
-                  <target>8</target>
-              </configuration>
-          </plugin>
-      </plugins>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

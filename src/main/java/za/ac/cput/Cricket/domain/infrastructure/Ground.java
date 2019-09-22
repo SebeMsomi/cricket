@@ -1,5 +1,7 @@
 package za.ac.cput.Cricket.domain.infrastructure;
 
+import java.util.Objects;
+
 public class Ground {
     private  int size;
     private int capacity;
@@ -25,6 +27,18 @@ public class Ground {
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public void setGroundId(String groundId) {
+        this.groundId = groundId;
     }
 
     public static class Builder
@@ -54,6 +68,30 @@ public class Ground {
         public Ground Build()
         {
             return new Ground(this);
+        }
+
+        @Override
+        public String toString() {
+            return "Builder{" +
+                    "size=" + size +
+                    ", capacity=" + capacity +
+                    ", groundId='" + groundId + '\'' +
+                    '}';
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Builder builder = (Builder) o;
+            return size == builder.size &&
+                    capacity == builder.capacity &&
+                    groundId.equals(builder.groundId);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(size, capacity, groundId);
         }
     }
 

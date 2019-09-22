@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cput.Cricket.domain.members.Coach;
 import za.ac.cput.Cricket.factory.members.CoachFactory;
-import za.ac.cput.Cricket.repos.interfaces.CoachRepo;
 
 import java.util.Set;
 

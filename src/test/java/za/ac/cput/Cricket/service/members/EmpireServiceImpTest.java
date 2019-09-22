@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import za.ac.cput.Cricket.domain.members.Empire;
 import za.ac.cput.Cricket.factory.members.Empirefactory;
-import za.ac.cput.Cricket.repos.members.EmpireRepoImp;
+import za.ac.cput.Cricket.repos.members.impl.EmpireRepoImp;
 
 import java.util.Set;
 

@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cput.Cricket.domain.members.Bowler;
 import za.ac.cput.Cricket.factory.members.BowlerFactory;
-import za.ac.cput.Cricket.repos.interfaces.BowlerRepo;
+import za.ac.cput.Cricket.repos.members.impl.BowlerRepoImp;
 
 import java.util.Set;
 
@@ -21,8 +21,8 @@ import static org.junit.Assert.*;
 public class BowlerRepoImpTest {
 
     @Autowired
-    private BowlerRepo repository;
-    private String bowler = null;
+    private BowlerRepoImp repository;
+
 
     @Test
     public void create() {

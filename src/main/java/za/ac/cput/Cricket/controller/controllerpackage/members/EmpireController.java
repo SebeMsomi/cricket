@@ -3,14 +3,14 @@ package za.ac.cput.Cricket.controller.controllerpackage.members;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Cricket.domain.members.Empire;
-import za.ac.cput.Cricket.service.members.EmpireServiceImp;
+import za.ac.cput.Cricket.service.members.impl.EmpireServiceImp;
 
 import java.util.Set;
 
-@RestController
-@RequestMapping("empire")
+//@RestController
+//@RequestMapping("empire")
 public class EmpireController {
-    @Autowired
+   /* @Autowired
     private EmpireServiceImp empireServiceImp;
 
     @PostMapping
@@ -37,5 +37,5 @@ public class EmpireController {
     @GetMapping("/getAll")
     public Set<Empire> getAll(){
         return empireServiceImp.getAll();
-    }
+    }*/
 }

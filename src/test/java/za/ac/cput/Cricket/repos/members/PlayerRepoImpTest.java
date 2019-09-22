@@ -7,11 +7,10 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import za.ac.cput.Cricket.domain.members.Player;
 import za.ac.cput.Cricket.factory.members.Playerfactory;
-import za.ac.cput.Cricket.repos.interfaces.PlayerRepo;
+import za.ac.cput.Cricket.repos.members.impl.PlayerRepoImp;
 
 import java.util.Set;
 
-import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PlayerRepoImpTest {
     private PlayerRepo repository;

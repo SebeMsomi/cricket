@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.Cricket.domain.recess.Drink;
 import za.ac.cput.Cricket.repos.recess.DrinkRepoImp;
 import za.ac.cput.Cricket.repos.interfaces.DrinkRepo;
-import za.ac.cput.Cricket.service.serviceInterface.DrinkService;
+import za.ac.cput.Cricket.service.members.DrinkService;
 
 import java.util.Set;
 
@@ -13,11 +13,11 @@ public class DrinkServiceImp implements DrinkService{
     private DrinkServiceImp service = null;
     private DrinkRepo repository;
 
-    private DrinkServiceImp(){
-        this.repository =  DrinkRepoImp.getRepository();
-    }
+
     public DrinkService getService(){
-        if (service == null) service = new DrinkServiceImp();
+        if (service == null) {
+            service = new DrinkServiceImp();
+        }
         return service;
     }
 

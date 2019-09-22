@@ -15,5 +15,6 @@ public class FacilitiesfactoryTest {
 
         Facilities f = Facilitiesfactory.getCourse(kit,medical,hotelId);
         Assert.assertSame(kit,medical,hotelId);
+        Assert.assertNotNull(f);
     }
 }

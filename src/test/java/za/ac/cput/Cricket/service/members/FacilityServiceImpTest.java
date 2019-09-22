@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import za.ac.cput.Cricket.domain.infrastructure.Facilities;
 import za.ac.cput.Cricket.factory.infrastructure.Facilitiesfactory;
-import za.ac.cput.Cricket.repos.infrastructure.FacilityRepoImp;
+import za.ac.cput.Cricket.repos.infrastructure.impl.FacilityRepoImp;
 
 import java.util.Set;
 

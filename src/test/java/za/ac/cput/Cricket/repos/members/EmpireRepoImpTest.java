@@ -7,11 +7,10 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import za.ac.cput.Cricket.domain.members.Empire;
 import za.ac.cput.Cricket.factory.members.Empirefactory;
-import za.ac.cput.Cricket.repos.interfaces.EmpireRepo;
+import za.ac.cput.Cricket.repos.members.impl.EmpireRepoImp;
 
 import java.util.Set;
 
-import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class EmpireRepoImpTest {
     private EmpireRepo repository;

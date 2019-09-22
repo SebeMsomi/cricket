@@ -19,7 +19,7 @@ public class BatsmanControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-    private String baseURL="http://localhost:8080/student";
+    private String baseURL="http://localhost:8080/batsman";
 
     @Test
     public void testGetAllStudents() {

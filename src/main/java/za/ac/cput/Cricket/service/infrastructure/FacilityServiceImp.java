@@ -1,8 +1,8 @@
 package za.ac.cput.Cricket.service.infrastructure;
 
 import za.ac.cput.Cricket.domain.infrastructure.Facilities;
-import za.ac.cput.Cricket.repos.infrastructure.FacilityRepoImp;
-import za.ac.cput.Cricket.repos.interfaces.FacilityRepo;
+import za.ac.cput.Cricket.repos.infrastructure.impl.FacilityRepoImp;
+import za.ac.cput.Cricket.repos.infrastructure.FacilityRepo;
 
 import java.util.Set;
 
@@ -14,7 +14,9 @@ public class FacilityServiceImp implements FacilityRepo{
         this.repository =  FacilityRepoImp.getRepository();
     }
     public FacilityRepo getService(){
-        if (service == null) service = new FacilityServiceImp();
+        if (service == null) {
+           return new FacilityServiceImp();
+        }
         return service;
     }
 

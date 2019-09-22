@@ -1,9 +1,11 @@
 package za.ac.cput.Cricket.controller.controllerpackage.members;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Cricket.domain.members.Batsman;
-import za.ac.cput.Cricket.service.serviceInterface.BatsmanService;
+import za.ac.cput.Cricket.factory.members.Batsmanfactories;
+import za.ac.cput.Cricket.service.members.BatsmanService;
 
 import java.util.Set;
 
@@ -11,12 +13,14 @@ import java.util.Set;
 @RequestMapping("/batsman")
 public class BatsmanController {
     @Autowired
+
     private BatsmanService service;
 
-    @PostMapping("/create")
-    @ResponseBody
-    public Batsman create(Batsman batsman) {
-        return service.create(batsman);
+    @GetMapping("/create/{batsman}")
+    public @ResponseBody
+     Batsman create(@PathVariable  String batsman) {
+       Batsman batsman1 = Batsmanfactories.getBatsman("1",50);
+       return service.create(batsman1);
     }
 
     @PostMapping("/update")
@@ -38,10 +42,9 @@ public class BatsmanController {
         return service.read(id);
     }
 
-    @GetMapping("/read/all")
+    @GetMapping("/getall")
     @ResponseBody
-    public Set<Batsman> getAll() {
+    public Set<Batsman> getAll(){
         return service.getAll();
     }
-
 }

@@ -3,7 +3,7 @@ package za.ac.cput.Cricket.controller.controllerpackage.members;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Cricket.domain.members.Bowler;
-import za.ac.cput.Cricket.service.serviceInterface.BowlerService;
+import za.ac.cput.Cricket.service.members.BowlerService;
 
 import java.util.Set;
 

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
-@RestController
-@RequestMapping("cricket")
+//@RestController
+//@RequestMapping("cricket")
 public class CricketController {
-    @Autowired
+   /* @Autowired
     private CricketServiceImp cricketServiceImp;
 
     @GetMapping("/create/{cricketName}")
@@ -43,5 +43,5 @@ public class CricketController {
     @ResponseBody
     public Set<Cricket> getAll(){
         return cricketServiceImp.getAll();
-    }
+    }*/
 }

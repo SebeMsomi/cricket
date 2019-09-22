@@ -7,10 +7,10 @@ import za.ac.cput.Cricket.service.recess.DrinkServiceImp;
 
 import java.util.Set;
 
-@RestController
-@RequestMapping("drink")
+//@RestController
+//@RequestMapping("drink")
 public class DrinkController {
-    @Autowired
+   /* @Autowired
     private DrinkServiceImp countryServiceImp;
 
     @PostMapping
@@ -36,5 +36,5 @@ public class DrinkController {
     @GetMapping("/getAll")
     public Set<Drink> getAll(){
         return countryServiceImp.getAll();
-    }
+    }*/
 }
