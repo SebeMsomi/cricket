@@ -6,7 +6,6 @@ import za.ac.cput.Cricket.repos.infrastructure.FacilityRepo;
 
 import java.util.*;
 
-@Repository("FacilityInMemory")
 public class FacilityRepoImp implements FacilityRepo {
     private static FacilityRepoImp repository = null;
     private Map<String, Facilities> facilities;

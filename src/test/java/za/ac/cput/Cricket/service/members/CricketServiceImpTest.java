@@ -4,7 +4,7 @@ import org.junit.*;
 import org.junit.runners.MethodSorters;
 import za.ac.cput.Cricket.domain.records.Cricket;
 import za.ac.cput.Cricket.factory.records.CricketFactory;
-import za.ac.cput.Cricket.repos.records.CricketRepositoryImp;
+import za.ac.cput.Cricket.repos.records.impl.CricketRepositoryImp;
 
 
 import java.util.Set;

@@ -1,8 +1,8 @@
-package za.ac.cput.Cricket.service.records;
+package za.ac.cput.Cricket.service.records.impl;
 
 import org.springframework.stereotype.Service;
 import za.ac.cput.Cricket.domain.records.Country;
-import za.ac.cput.Cricket.repos.records.CountryRepoImp;
+import za.ac.cput.Cricket.repos.records.impl.CountryRepoImp;
 import za.ac.cput.Cricket.repos.interfaces.CountryRepo;
 import za.ac.cput.Cricket.service.members.CountryService;
 

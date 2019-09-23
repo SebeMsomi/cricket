@@ -1,7 +1,5 @@
 package za.ac.cput.Cricket.service.members;
 
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cput.Cricket.domain.records.Country;
 import za.ac.cput.Cricket.factory.records.Countryfactory;
-import za.ac.cput.Cricket.repos.records.CountryRepoImp;
-import za.ac.cput.Cricket.service.records.CountryServiceImp;
-
-import java.util.Set;
+import za.ac.cput.Cricket.repos.records.impl.CountryRepoImp;
+import za.ac.cput.Cricket.service.records.impl.CountryServiceImp;
 
 import static junit.framework.TestCase.*;
 

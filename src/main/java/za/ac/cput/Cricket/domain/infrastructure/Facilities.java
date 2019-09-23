@@ -54,6 +54,18 @@ public class Facilities {
             return this;
         }
 
+        public void setHotelId(String hotelId) {
+            this.hotelId = hotelId;
+        }
+
+        public void setMedical(String medical) {
+            this.medical = medical;
+        }
+
+        public void setKit(String kit) {
+            this.kit = kit;
+        }
+
         public Builder hotelId(String hotelId) {
             this.hotelId = hotelId;
             return this;

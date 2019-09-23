@@ -1,7 +1,7 @@
 package za.ac.cput.Cricket.service.members.impl;
 
 import za.ac.cput.Cricket.domain.records.League;
-import za.ac.cput.Cricket.repos.records.LeagueRepoImp;
+import za.ac.cput.Cricket.repos.records.impl.LeagueRepoImp;
 import za.ac.cput.Cricket.repos.interfaces.LeagueRepo;
 import za.ac.cput.Cricket.service.members.LeagueService;
 

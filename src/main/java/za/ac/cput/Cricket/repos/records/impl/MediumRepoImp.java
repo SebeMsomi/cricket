@@ -1,4 +1,4 @@
-package za.ac.cput.Cricket.repos.records;
+package za.ac.cput.Cricket.repos.records.impl;
 
 import za.ac.cput.Cricket.domain.records.Medium;
 import za.ac.cput.Cricket.repos.interfaces.MediumRepo;

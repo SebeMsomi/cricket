@@ -1,12 +1,5 @@
 package za.ac.cput.Cricket.controller.controllerpackage.members;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import za.ac.cput.Cricket.domain.records.Fast;
-import za.ac.cput.Cricket.service.records.FastServiceImp;
-
-import java.util.Set;
-
 //@RestController
 //@RequestMapping("fast")
 public class FastController {

@@ -1,4 +1,4 @@
-package za.ac.cput.Cricket.service.records;
+package za.ac.cput.Cricket.service.records.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.Cricket.domain.records.Fast;

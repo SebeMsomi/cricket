@@ -38,6 +38,23 @@ public class FacilitiesServiceTest {
 
     }
     @Test
+    public void update() {
+
+        Facilities facilities = Facilitiesfactory.getCourse(
+                "1","medicine","med"
+        );
+        facilityServiceImp.create(facilities);
+
+
+        Facilities facilities1 = Facilitiesfactory.getCourse(
+                "1","medicine","med"
+        );
+
+
+
+
+    }
+    @Test
     public void delete() {
 
         Facilities facilities =Facilitiesfactory.getCourse(
