@@ -35,9 +35,9 @@ public class ResultControllerTest {
 
     }
     @Test
-    public void a_create() {
+    public void create() {
 
-        Results results = ResultFactory.getResults("1","The protea won by 2 wickets");
+        Results results = ResultFactory.getResults("ss","The protea won by 2 wickets");
         results.setResultsID("1");
         ResponseEntity<Results> postResponse = restTemplate.postForEntity(baseURL + "/new",results, Results.class);
 
@@ -48,25 +48,25 @@ public class ResultControllerTest {
     @Test
     public void findById() {
 
-        Results res = restTemplate.getForObject(baseURL + "/find/Afsd", Results.class);
+        Results results = restTemplate.getForObject(baseURL + "/find/ss", Results.class);
 
-        assertNull(res);
+        assertNull(results);
 
     }
     @Test
-    public void c_update() {
+    public void update() {
 
 
-        Results results = ResultFactory.getResults("1","The protea won by 2 wickets");
+        Results results = ResultFactory.getResults("ss","The protea won by 2 wickets");
         results.setResultsID("1");
         ResponseEntity<Results> postResponse = restTemplate.postForEntity(baseURL + "/new", results, Results.class);
 
-        Results reportIn = restTemplate.getForObject(baseURL + "/find/" + "1", Results.class);
+        Results reportIn = restTemplate.getForObject(baseURL + "/find/" + "ss", Results.class);
         results.getDescription();
 
-        restTemplate.put(baseURL + "/update/" + "1", reportIn);
+        restTemplate.put(baseURL + "/update/" + "ss", reportIn);
 
-        Results results1 = restTemplate.getForObject(baseURL + "/update/" + "1", Results.class);
+        Results results1 = restTemplate.getForObject(baseURL + "/update/" + "ss", Results.class);
 
         assertNotNull(results1);
 
@@ -75,14 +75,14 @@ public class ResultControllerTest {
     @Test
     public void delete() {
 
-        String id = "1";
-        Results results = restTemplate.getForObject(baseURL + "/find/" + "1", Results.class);
+
+        Results results = restTemplate.getForObject(baseURL + "/find/" + "ss", Results.class);
         assertNull(results);
 
-        restTemplate.delete(baseURL + "/delete/" + "Afsd");
+        restTemplate.delete(baseURL + "/delete/" + "ss");
 
         try {
-            results = restTemplate.getForObject(baseURL + "/find/" + "Afsd", Results.class);
+            results = restTemplate.getForObject(baseURL + "/find/" + "ss", Results.class);
         } catch (final HttpClientErrorException e) {
             assertEquals(e.getStatusCode(), HttpStatus.NOT_FOUND);
         }
@@ -90,7 +90,7 @@ public class ResultControllerTest {
     }
 
     @Test
-    public void d_getAll() {
+    public void getAll() {
 
         HttpHeaders headers = new HttpHeaders();
 
@@ -102,28 +102,5 @@ public class ResultControllerTest {
 
     }
 
-    @Test
-    public void whenCorrectCredentialsWillBe200() throws Exception {
-
-        ResponseEntity<String> response = restTemplate.withBasicAuth("user", "user").getForEntity(baseURL + "/getall", String.class);
-
-        System.out.println(response.getStatusCode());
-        System.out.println(response.getBody());
-
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-
-    }
-
-    @Test
-    public void whenIncorrectCredentialsWillBe401() throws Exception {
-
-        ResponseEntity<String> response = restTemplate.withBasicAuth("users", "users").getForEntity(baseURL + "/getall", String.class);
-
-        System.out.println(response.getStatusCode());
-        System.out.println(response.getBody());
-
-        assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
-
-    }
-
+  
 }
