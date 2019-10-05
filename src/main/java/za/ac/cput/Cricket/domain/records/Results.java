@@ -13,7 +13,7 @@ public class Results {
     private Results(Builder builder){
         this.resultsID = builder.resultsID;
         this.description = builder.description;
-        this.description = builder.description;
+
 
     }
 
