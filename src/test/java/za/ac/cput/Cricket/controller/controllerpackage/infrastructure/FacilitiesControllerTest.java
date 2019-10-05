@@ -21,7 +21,7 @@ public class FacilitiesControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
-    private String baseURL="http://localhost:8080/facilities";
+    private String baseURL="http://localhost:8080/";
 
     @Test
     public void create() {

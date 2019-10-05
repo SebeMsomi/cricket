@@ -1,4 +1,4 @@
-package za.ac.cput.Cricket.controller.controllerpackage;
+package za.ac.cput.Cricket.controller.controllerpackage.members;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,18 +8,16 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
-import za.ac.cput.Cricket.domain.members.Batsman;
-import za.ac.cput.Cricket.factory.members.Batsmanfactories;
+import za.ac.cput.Cricket.domain.members.Bowler;
+import za.ac.cput.Cricket.factory.members.BowlerFactory;
 
 import static org.junit.Assert.*;
-
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
-public class BatsmanControllerTest {
-
+public class BowlerControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
-    private String baseURL="http://localhost:8080/batsman";
+    private String baseURL="http://localhost:8080";
 
     @Test
     public void testGetAllStudents() {
@@ -33,8 +31,8 @@ public class BatsmanControllerTest {
 
     @Test
     public void create() {
-        Batsman batsman = Batsmanfactories.getBatsman("See" , 48);
-        ResponseEntity<Batsman> postResponse = restTemplate.postForEntity(baseURL + "/create", batsman, Batsman.class);
+        Bowler bowler = BowlerFactory.getBowler("There are three types of Bowlers");
+        ResponseEntity<Bowler> postResponse = restTemplate.postForEntity(baseURL + "/create", bowler, Bowler.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
     }
@@ -42,20 +40,20 @@ public class BatsmanControllerTest {
     @Test
     public void update() {
         int id = 1;
-        Batsman batsman = restTemplate.getForObject(baseURL + "/batsman/" + id, Batsman.class);
-        restTemplate.put(baseURL + "/bastmans/" + id, batsman);
-        Batsman updatedStudent = restTemplate.getForObject(baseURL + "/Batsman/" + id, Batsman.class);
+        Bowler bowler = restTemplate.getForObject(baseURL + "/bowler/" + id, Bowler.class);
+        restTemplate.put(baseURL + "/bowlers/" + id, bowler);
+        Bowler updatedStudent = restTemplate.getForObject(baseURL + "/bowler/" + id, Bowler.class);
         assertNotNull(updatedStudent);
     }
 
     @Test
     public void delete() {
         int id = 2;
-        Batsman batsman = restTemplate.getForObject(baseURL + "/batsmans/" + id, Batsman.class);
-        assertNotNull(batsman);
+        Bowler bowler = restTemplate.getForObject(baseURL + "/batsmans/" + id, Bowler.class);
+        assertNotNull(bowler);
         restTemplate.delete(baseURL + "/batsmans/" + id);
         try {
-            batsman = restTemplate.getForObject(baseURL + "/batsmans/" + id, Batsman.class);
+            bowler = restTemplate.getForObject(baseURL + "/batsmans/" + id, Bowler.class);
         } catch (final HttpClientErrorException e) {
             assertEquals(e.getStatusCode(), HttpStatus.NOT_FOUND);
         }
@@ -63,6 +61,7 @@ public class BatsmanControllerTest {
 
     @Test
     public void read() {
+
     }
 
     @Test

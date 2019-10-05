@@ -1,5 +1,6 @@
 package za.ac.cput.Cricket.controller.controllerpackage.record;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -10,7 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.client.HttpClientErrorException;
+import za.ac.cput.Cricket.domain.records.Result;
 import za.ac.cput.Cricket.domain.records.Results;
 import za.ac.cput.Cricket.factory.records.ResultFactory;
 
@@ -19,12 +22,13 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@CrossOrigin(origins = "http://localhost:8080")
 public class ResultControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
 
-    private String baseURL="http://localhost:8080/results";
+    private String baseURL="http://localhost:8080/result";
 
     @Before
     public void result(){
@@ -50,7 +54,7 @@ public class ResultControllerTest {
 
         Results results = restTemplate.getForObject(baseURL + "/find/ss", Results.class);
 
-        assertNull(results);
+        Assert.assertNotNull(results);
 
     }
     @Test
@@ -58,7 +62,7 @@ public class ResultControllerTest {
 
 
         Results results = ResultFactory.getResults("ss","The protea won by 2 wickets");
-        results.setResultsID("1");
+        results.setResultsID("ss");
         ResponseEntity<Results> postResponse = restTemplate.postForEntity(baseURL + "/new", results, Results.class);
 
         Results reportIn = restTemplate.getForObject(baseURL + "/find/" + "ss", Results.class);
@@ -77,7 +81,7 @@ public class ResultControllerTest {
 
 
         Results results = restTemplate.getForObject(baseURL + "/find/" + "ss", Results.class);
-        assertNull(results);
+        Assert.assertNotNull(results);
 
         restTemplate.delete(baseURL + "/delete/" + "ss");
 
