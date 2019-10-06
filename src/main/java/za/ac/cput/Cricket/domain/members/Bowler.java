@@ -1,8 +1,11 @@
 package za.ac.cput.Cricket.domain.members;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class Bowler {
+
     private String type;
 
     private Bowler(){}

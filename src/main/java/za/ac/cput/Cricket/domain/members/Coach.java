@@ -1,6 +1,11 @@
 package za.ac.cput.Cricket.domain.members;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Coach {
+    @Id
     private String experience;
     private int age;
     private String name, coachId;

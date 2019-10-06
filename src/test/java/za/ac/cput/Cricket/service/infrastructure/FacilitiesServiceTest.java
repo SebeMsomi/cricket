@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cput.Cricket.domain.infrastructure.Facilities;
 import za.ac.cput.Cricket.factory.infrastructure.Facilitiesfactory;
+import za.ac.cput.Cricket.service.infrastructure.impl.FacilityServiceImp;
 
 import static junit.framework.TestCase.*;
 

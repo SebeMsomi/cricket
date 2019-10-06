@@ -1,9 +1,15 @@
 package za.ac.cput.Cricket.domain.members;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class Batsman {
+    @Id
     private int runScored;
+    @Column(name = "runScored" )
     private String batsmanId;
 
     private Batsman(){}

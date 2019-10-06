@@ -1,7 +1,6 @@
 package za.ac.cput.Cricket.domain.records;
 
 import java.util.Objects;
-
 public class Results {
     private String resultsID;
     private String description;

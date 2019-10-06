@@ -1,4 +1,4 @@
-package za.ac.cput.Cricket.service.infrastructure;
+package za.ac.cput.Cricket.service.infrastructure.impl;
 
 import za.ac.cput.Cricket.domain.infrastructure.Ground;
 import za.ac.cput.Cricket.repos.infrastructure.impl.GroundRepoImp;

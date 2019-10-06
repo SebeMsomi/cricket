@@ -1,8 +1,12 @@
 package za.ac.cput.Cricket.domain.infrastructure;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class Ground {
+    @Id
     private  int size;
     private int capacity;
     private String groundId;

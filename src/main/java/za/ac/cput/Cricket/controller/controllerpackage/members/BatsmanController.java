@@ -10,30 +10,36 @@ import za.ac.cput.Cricket.service.members.BatsmanService;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/batsman")
+@RequestMapping("/appointment")
+@CrossOrigin(origins = "http://localhost:8080")
 public class BatsmanController {
-    @Autowired
 
+    @Autowired
+    @Qualifier("BatsmanServiceImpl")
     private BatsmanService service;
 
-    @GetMapping("/create/{batsman}")
-    public @ResponseBody
-     Batsman create(@PathVariable  String batsman) {
-       Batsman batsman1 = Batsmanfactories.getBatsman("1",50);
-       return service.create(batsman1);
+    @PostMapping("/new")
+    public Batsman create(@RequestBody Batsman batsman){
+
+        return service.create(batsman);
+    }
+    @GetMapping(path = "/find/{id}")
+    public Batsman findById(@PathVariable String id){
+
+        Batsman account = service.read(id);
+        return account;
     }
 
-    @PostMapping("/update")
-    @ResponseBody
-    public Batsman update(Batsman batsman) {
-        return service.update(batsman);
+    @PutMapping("/update")
+    public void update(@RequestBody Batsman account){
+
+        service.update(account);
+
     }
 
-    @GetMapping("/delete/{id}")
-    @ResponseBody
-    public void delete(@PathVariable String id) {
+    @DeleteMapping(path = "/delete/{id}")
+    public void delete(@PathVariable String id){
         service.delete(id);
-
     }
 
     @GetMapping("/read/{id}")
@@ -43,7 +49,6 @@ public class BatsmanController {
     }
 
     @GetMapping("/getall")
-    @ResponseBody
     public Set<Batsman> getAll(){
         return service.getAll();
     }

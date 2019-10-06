@@ -1,6 +1,11 @@
 package za.ac.cput.Cricket.domain.infrastructure;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Facilities {
+    @Id
     private static String hotelId;
     private static String kit;
     private static String medical;
